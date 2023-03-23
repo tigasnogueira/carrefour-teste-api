@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EC7AACFF-C265-4D08-8FCA-0EA6C9D62572}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Carrefour.Application", "Carrefour.Application", "{487AC16B-D78D-4B0B-A0FF-A384CBD50995}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Mvc", "src\Carrefour.Application\Carrefour.Mvc\Carrefour.Mvc.csproj", "{E3F9C7E7-2309-4906-A80D-D1F5A76E0460}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Domain", "src\Carrefour.Domain\Carrefour.Domain.csproj", "{FD09B632-62E5-4673-BBAF-EDB435825089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Infra.Data", "src\Carrefour.Infra.Data\Carrefour.Infra.Data.csproj", "{A00B980F-287C-45AE-B94F-4824D0F0E248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Service", "src\Carrefour.Service\Carrefour.Service.csproj", "{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3F9C7E7-2309-4906-A80D-D1F5A76E0460}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3F9C7E7-2309-4906-A80D-D1F5A76E0460}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3F9C7E7-2309-4906-A80D-D1F5A76E0460}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3F9C7E7-2309-4906-A80D-D1F5A76E0460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD09B632-62E5-4673-BBAF-EDB435825089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD09B632-62E5-4673-BBAF-EDB435825089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD09B632-62E5-4673-BBAF-EDB435825089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD09B632-62E5-4673-BBAF-EDB435825089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A00B980F-287C-45AE-B94F-4824D0F0E248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A00B980F-287C-45AE-B94F-4824D0F0E248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A00B980F-287C-45AE-B94F-4824D0F0E248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A00B980F-287C-45AE-B94F-4824D0F0E248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{487AC16B-D78D-4B0B-A0FF-A384CBD50995} = {EC7AACFF-C265-4D08-8FCA-0EA6C9D62572}
+		{E3F9C7E7-2309-4906-A80D-D1F5A76E0460} = {487AC16B-D78D-4B0B-A0FF-A384CBD50995}
+		{FD09B632-62E5-4673-BBAF-EDB435825089} = {EC7AACFF-C265-4D08-8FCA-0EA6C9D62572}
+		{A00B980F-287C-45AE-B94F-4824D0F0E248} = {EC7AACFF-C265-4D08-8FCA-0EA6C9D62572}
+		{EB5B8343-366E-4A8D-B9F3-5A206CA35EC9} = {EC7AACFF-C265-4D08-8FCA-0EA6C9D62572}
+	EndGlobalSection
+EndGlobal
