@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Carrefour.Application\Carrefour.Mvc\Carrefour.Mvc.csproj" />
+    <ProjectReference Include="..\Carrefour.Domain\Carrefour.Domain.csproj" />
+    <ProjectReference Include="..\Carrefour.Infra.Data\Carrefour.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>

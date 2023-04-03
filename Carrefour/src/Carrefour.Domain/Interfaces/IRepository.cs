@@ -1,6 +1,9 @@
+using Carrefour.Domain.Model;
+using System.Linq.Expressions;
+
 namespace Carrefour.Domain.Interfaces;
 
-public interface IRepository<TEntity> : IDisposable where TEntity : EntityModel
+public interface IRepository<TEntity> : IDisposable where TEntity : Entity
 {
     Task Add(TEntity entity);
     Task<TEntity> GetById(Guid id);

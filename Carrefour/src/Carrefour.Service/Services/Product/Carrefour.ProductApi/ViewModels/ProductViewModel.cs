@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Carrefour.ProductApi.ViewModels;
 
 public class ProductViewModel

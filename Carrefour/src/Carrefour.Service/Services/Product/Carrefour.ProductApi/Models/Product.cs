@@ -1,6 +1,8 @@
+using Carrefour.Domain.Model;
+
 namespace Carrefour.ProductApi.Models;
 
-public class Product : EntityModel
+public class Product : Entity
 {
     public string Name { get; set; }
     public string Photo { get; set; }
