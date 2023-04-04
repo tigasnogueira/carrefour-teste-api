@@ -7,7 +7,7 @@ public class MyDbContext : DbContext
 {
     public MyDbContext(DbContextOptions<MyDbContext> options) : base(options) { }
 
-    public DbSet<Product> Products { get; set; }
+    public DbSet<ProductModel> Products { get; set; }
 
     protected override void OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder modelBuilder)
     {

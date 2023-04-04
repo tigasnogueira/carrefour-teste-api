@@ -3,7 +3,7 @@ using System.Linq.Expressions;
 
 namespace Carrefour.Domain.Interfaces;
 
-public interface IRepository<TEntity> : IDisposable where TEntity : Entity
+public interface IRepository<TEntity> : IDisposable where TEntity : EntityModel
 {
     Task Add(TEntity entity);
     Task<TEntity> GetById(Guid id);

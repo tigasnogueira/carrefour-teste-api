@@ -1,10 +1,12 @@
 using Carrefour.Domain.Interfaces;
 using Carrefour.Domain.Model;
+using Carrefour.ProductApi.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Carrefour.ProductApi.Repository;
 
-public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
+public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityModel, new()
 {
     protected readonly MyDbContext Db;
     protected readonly DbSet<TEntity> DbSet;

@@ -7,7 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carrefour.Application\Carrefour.Mvc\Carrefour.Mvc.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Carrefour.Domain\Carrefour.Domain.csproj" />
     <ProjectReference Include="..\Carrefour.Infra.Data\Carrefour.Infra.Data.csproj" />
   </ItemGroup>

@@ -1,6 +1,8 @@
+using Carrefour.Domain.Interfaces;
+
 namespace Carrefour.Domain.Notifications;
 
-public class Notifier
+public class Notifier : INotifier
 {
     private List<Notification> _notifications;
 

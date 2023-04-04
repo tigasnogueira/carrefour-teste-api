@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Carrefour.Domain.Model;
 
-public abstract class Entity
+public abstract class EntityModel
 {
-    protected Entity()
+    protected EntityModel()
     {
         Id = Guid.NewGuid();
     }
