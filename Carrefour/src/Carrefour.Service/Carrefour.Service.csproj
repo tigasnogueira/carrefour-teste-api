@@ -7,13 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Product\Carrefour.Product.Business\**" />
+    <Compile Remove="Services\Product\Carrefour.Product.Data\**" />
+    <EmbeddedResource Remove="Services\Product\Carrefour.Product.Business\**" />
+    <EmbeddedResource Remove="Services\Product\Carrefour.Product.Data\**" />
+    <None Remove="Services\Product\Carrefour.Product.Business\**" />
+    <None Remove="Services\Product\Carrefour.Product.Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.15" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Carrefour.Domain\Carrefour.Domain.csproj" />
     <ProjectReference Include="..\Carrefour.Infra.Data\Carrefour.Infra.Data.csproj" />
   </ItemGroup>
 

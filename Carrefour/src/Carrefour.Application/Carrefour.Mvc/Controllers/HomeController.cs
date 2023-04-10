@@ -1,31 +1,50 @@
-﻿using System.Diagnostics;
+﻿using Carrefour.Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
-using Carrefour.Mvc.Models;
 
-namespace Carrefour.Mvc.Controllers;
-
-public class HomeController : Controller
+namespace Carrefour.Mvc.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : MainController
     {
-        _logger = logger;
-    }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        [Route("erro/{id:length(3,3)}")]
+        public IActionResult Error(int id)
+        {
+            var modelError = new ErrorViewModel();
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (id == 500)
+            {
+                modelError.Message = "Ocorreu um erro! Tente novamente mais tarde ou contate nosso suporte.";
+                modelError.Title = "Ocorreu um erro!";
+                modelError.ErrorCode = id;
+            }
+            else if (id == 404)
+            {
+                modelError.Message =
+                    "A página que está procurando não existe! <br />Em caso de dúvidas entre em contato com nosso suporte";
+                modelError.Title = "Ops! Página não encontrada.";
+                modelError.ErrorCode = id;
+            }
+            else if (id == 403)
+            {
+                modelError.Message = "Você não tem permissão para fazer isto.";
+                modelError.Title = "Acesso Negado";
+                modelError.ErrorCode = id;
+            }
+            else
+            {
+                return StatusCode(404);
+            }
+
+            return View("Error", modelError);
+        }
     }
 }
