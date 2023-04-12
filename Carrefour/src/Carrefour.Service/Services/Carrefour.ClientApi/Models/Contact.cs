@@ -5,8 +5,8 @@ namespace Carrefour.ClientApi.Models;
 public class Contact : EntityModel
 {
     public Guid ClientId { get; set; }
-    public int Cellphone { get; set; }
-    public int HomePhone { get; set; }
+    public int Phone { get; set; }
+    public string Email { get; set; }
 
     public ClientModel Client { get; set; }
 }

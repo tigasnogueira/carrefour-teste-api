@@ -23,19 +23,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Product", "Product", "{2A41
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{11EF3DA2-90E5-408B-9595-D6CBDD24D83A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Posting", "Posting", "{74BCAD1F-7B9D-4367-8928-EEAC0D57ACB5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transaction", "Transaction", "{74BCAD1F-7B9D-4367-8928-EEAC0D57ACB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.ProductApi", "src\Carrefour.Service\Services\Carrefour.ProductApi\Carrefour.ProductApi.csproj", "{44475B4A-D3FA-464B-B6E4-4909D93D6117}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.ProductApi", "src\Carrefour.Service\Services\Carrefour.ProductApi\Carrefour.ProductApi.csproj", "{44475B4A-D3FA-464B-B6E4-4909D93D6117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.ClientApi", "src\Carrefour.Service\Services\Carrefour.ClientApi\Carrefour.ClientApi.csproj", "{8964D875-7C58-4AEC-B87B-30E851111BEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.ClientApi", "src\Carrefour.Service\Services\Carrefour.ClientApi\Carrefour.ClientApi.csproj", "{8964D875-7C58-4AEC-B87B-30E851111BEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Mvc", "src\Carrefour.Application\Carrefour.Mvc\Carrefour.Mvc.csproj", "{75CBAAE3-A185-405A-A581-D1569F192DD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.Mvc", "src\Carrefour.Application\Carrefour.Mvc\Carrefour.Mvc.csproj", "{75CBAAE3-A185-405A-A581-D1569F192DD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.IdentityApi", "src\Carrefour.Service\Services\Carrefour.IdentityApi\Carrefour.IdentityApi.csproj", "{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.IdentityApi", "src\Carrefour.Service\Services\Carrefour.IdentityApi\Carrefour.IdentityApi.csproj", "{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.PostingApi", "src\Carrefour.Service\Services\Carrefour.PostingApi\Carrefour.PostingApi.csproj", "{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.TransactionApi", "src\Carrefour.Service\Services\Carrefour.PostingApi\Carrefour.TransactionApi.csproj", "{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carrefour.Core", "src\Carrefour.Domain\Carrefour.Core\Carrefour.Core.csproj", "{2D52DFCC-F12B-4EDB-AC56-463107F609CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.Core", "src\Carrefour.Domain\Carrefour.Core\Carrefour.Core.csproj", "{2D52DFCC-F12B-4EDB-AC56-463107F609CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
