@@ -7,12 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.15" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Carrefour.Domain\Carrefour.Core\Carrefour.Core.csproj" />
     <ProjectReference Include="..\Carrefour.ClientApi\Carrefour.ClientApi.csproj" />
+    <ProjectReference Include="..\Carrefour.IdentityApi\Carrefour.IdentityApi.csproj" />
   </ItemGroup>
 
 </Project>

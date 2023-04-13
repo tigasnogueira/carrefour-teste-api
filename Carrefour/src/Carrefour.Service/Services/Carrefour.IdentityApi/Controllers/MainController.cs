@@ -6,44 +6,44 @@ namespace Carrefour.IdentityApi.Controllers
     [ApiController]
     public abstract class MainController : Controller
     {
-        protected ICollection<string> Erros = new List<string>();
+        protected ICollection<string> Errors = new List<string>();
         protected ActionResult CustomResponse(object result = null)
         {
-            if (OperacaoValida())
+            if (ValidOperation())
             {
                 return Ok(result);
             }
 
             return BadRequest(new ValidationProblemDetails(new Dictionary<string, string[]>
             {
-                {"Mensagens", Erros.ToArray()},
+                {"Mensagens", Errors.ToArray()},
             }));
         }
 
         protected ActionResult CustomResponse(ModelStateDictionary modelState)
         {
-            var erros = modelState.Values.SelectMany(e => e.Errors);
-            foreach (var erro in erros)
+            var errors = modelState.Values.SelectMany(e => e.Errors);
+            foreach (var error in errors)
             {
-                AdiconarErroProcessamento(erro.ErrorMessage);
+                AddProcessingError(error.ErrorMessage);
             }
 
             return CustomResponse();
         }
 
-        protected bool OperacaoValida()
+        protected bool ValidOperation()
         {
-            return !Erros.Any();
+            return !Errors.Any();
         }
 
-        protected void AdiconarErroProcessamento(string erro)
+        protected void AddProcessingError(string error)
         {
-            Erros.Add(erro);
+            Errors.Add(error);
         }
 
-        protected void LimparErrosProcessamento()
+        protected void CleanProcessingErrors()
         {
-            Erros.Clear();
+            Errors.Clear();
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Carrefour.IdentityApi.Models
 {
-    public class UsuarioRegistro
+    public class UserRegister
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
@@ -16,7 +16,7 @@ namespace Carrefour.IdentityApi.Models
         public string SenhaConfirmacao { get; set; }
     }
 
-    public class UsuarioLogin
+    public class UserLogin
     {
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [EmailAddress(ErrorMessage = "O campo {0} está em formato inválido")]
@@ -27,21 +27,21 @@ namespace Carrefour.IdentityApi.Models
         public string Senha { get; set; }
     }
 
-    public class UsuarioRespostaLogin
+    public class UserLoginResponse
     {
         public string AccessToken { get; set; }
         public double ExpiresIn { get; set; }
-        public UsuarioToken UsuarioToken { get; set; }
+        public UserToken UserToken { get; set; }
     }
 
-    public class UsuarioToken
+    public class UserToken
     {
         public string Id { get; set; }
         public string Email { get; set; }
-        public IEnumerable<UsuarioClaim> Claims { get; set; }
+        public IEnumerable<UserClaim> Claims { get; set; }
     }
 
-    public class UsuarioClaim
+    public class UserClaim
     {
         public string Value { get; set; }
         public string Type { get; set; }

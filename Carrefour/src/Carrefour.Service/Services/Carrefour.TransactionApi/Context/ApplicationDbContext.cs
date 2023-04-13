@@ -32,10 +32,5 @@ public class ApplicationDbContext : DbContext
             .Property(t => t.Date)
             .IsRequired();
 
-        modelBuilder.Entity<TransactionModel>()
-            .HasOne(t => t.Account)
-            .WithMany(a => a.Transactions)
-            .HasForeignKey(t => t.AccountId)
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }

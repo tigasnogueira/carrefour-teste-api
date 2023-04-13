@@ -27,64 +27,64 @@ namespace Carrefour.IdentityApi.Controllers
         }
 
         [HttpPost("nova-conta")]
-        public async Task<ActionResult> Registrar(UsuarioRegistro usuarioRegistro)
+        public async Task<ActionResult> Register(UserRegister userRegister)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
             var user = new IdentityUser
             {
-                UserName = usuarioRegistro.Email,
-                Email = usuarioRegistro.Email,
+                UserName = userRegister.Email,
+                Email = userRegister.Email,
                 EmailConfirmed = true
             };
 
-            var result = await _userManager.CreateAsync(user, usuarioRegistro.Senha);
+            var result = await _userManager.CreateAsync(user, userRegister.Senha);
 
             if (result.Succeeded)
             {
-                return CustomResponse(await GerarJwt(usuarioRegistro.Email));
+                return CustomResponse(await GenerateJwt(userRegister.Email));
             }
 
             foreach (var error in result.Errors)
             {
-                AdiconarErroProcessamento(error.Description);
+                AddProcessingError(error.Description);
             }
 
             return CustomResponse();
         }
 
         [HttpPost("autenticar")]
-        public async Task<ActionResult> Login(UsuarioLogin usuarioLogin)
+        public async Task<ActionResult> Login(UserLogin userLogin)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var result = await _signInManager.PasswordSignInAsync(usuarioLogin.Email, usuarioLogin.Senha,
+            var result = await _signInManager.PasswordSignInAsync(userLogin.Email, userLogin.Senha,
                 false, true);
 
             if (result.Succeeded)
             {
-                return CustomResponse(await GerarJwt(usuarioLogin.Email));
+                return CustomResponse(await GenerateJwt(userLogin.Email));
             }
 
             if (result.IsLockedOut)
             {
-                AdiconarErroProcessamento("Usuário temporariamente bloqueado por tentativas inválidas");
+                AddProcessingError("Usuário temporariamente bloqueado por tentativas inválidas");
                 return CustomResponse();
             }
 
-            AdiconarErroProcessamento("Usuário ou Senha incorretos");
+            AddProcessingError("Usuário ou Senha incorretos");
             return CustomResponse();
         }
 
-        private async Task<UsuarioRespostaLogin> GerarJwt(string email)
+        private async Task<UserLoginResponse> GenerateJwt(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
             var claims = await _userManager.GetClaimsAsync(user);
 
             var identityClaims = await ObterClaimsUsuario(claims, user);
-            var encodedToken = CodificarToken(identityClaims);
+            var encodedToken = EncodeToken(identityClaims);
 
-            return ObterRespostaToken(encodedToken, user, claims);
+            return GetTokenResponse(encodedToken, user, claims);
         }
 
         private async Task<ClaimsIdentity> ObterClaimsUsuario(ICollection<Claim> claims, IdentityUser user)
@@ -107,7 +107,7 @@ namespace Carrefour.IdentityApi.Controllers
             return identityClaims;
         }
 
-        private string CodificarToken(ClaimsIdentity identityClaims)
+        private string EncodeToken(ClaimsIdentity identityClaims)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -123,17 +123,17 @@ namespace Carrefour.IdentityApi.Controllers
             return tokenHandler.WriteToken(token);
         }
 
-        private UsuarioRespostaLogin ObterRespostaToken(string encodedToken, IdentityUser user, IEnumerable<Claim> claims)
+        private UserLoginResponse GetTokenResponse(string encodedToken, IdentityUser user, IEnumerable<Claim> claims)
         {
-            return new UsuarioRespostaLogin
+            return new UserLoginResponse
             {
                 AccessToken = encodedToken,
                 ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
-                UsuarioToken = new UsuarioToken
+                UserToken = new UserToken
                 {
                     Id = user.Id,
                     Email = user.Email,
-                    Claims = claims.Select(c => new UsuarioClaim { Type = c.Type, Value = c.Value })
+                    Claims = claims.Select(c => new UserClaim { Type = c.Type, Value = c.Value })
                 }
             };
         }

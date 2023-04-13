@@ -33,9 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.Mvc", "src\Carref
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.IdentityApi", "src\Carrefour.Service\Services\Carrefour.IdentityApi\Carrefour.IdentityApi.csproj", "{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.TransactionApi", "src\Carrefour.Service\Services\Carrefour.PostingApi\Carrefour.TransactionApi.csproj", "{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.Core", "src\Carrefour.Domain\Carrefour.Core\Carrefour.Core.csproj", "{2D52DFCC-F12B-4EDB-AC56-463107F609CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carrefour.TransactionApi", "src\Carrefour.Service\Services\Carrefour.TransactionApi\Carrefour.TransactionApi.csproj", "{AA19F381-4045-422B-8865-290E3BEF84E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +59,14 @@ Global
 		{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC10B62C-3C9C-475E-8B50-4E53A3DD140D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D52DFCC-F12B-4EDB-AC56-463107F609CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D52DFCC-F12B-4EDB-AC56-463107F609CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D52DFCC-F12B-4EDB-AC56-463107F609CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D52DFCC-F12B-4EDB-AC56-463107F609CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA19F381-4045-422B-8865-290E3BEF84E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA19F381-4045-422B-8865-290E3BEF84E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA19F381-4045-422B-8865-290E3BEF84E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA19F381-4045-422B-8865-290E3BEF84E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,8 +86,8 @@ Global
 		{8964D875-7C58-4AEC-B87B-30E851111BEE} = {5A5BBDED-7BE9-49AE-A44D-188235E5AFF4}
 		{75CBAAE3-A185-405A-A581-D1569F192DD5} = {389227C5-2B43-495B-ACA9-FF17A87E5EF7}
 		{8A079BEE-81D0-4EAA-BAD6-B8FDF0F5F764} = {11EF3DA2-90E5-408B-9595-D6CBDD24D83A}
-		{DC10B62C-3C9C-475E-8B50-4E53A3DD140D} = {74BCAD1F-7B9D-4367-8928-EEAC0D57ACB5}
 		{2D52DFCC-F12B-4EDB-AC56-463107F609CE} = {F2FF62A6-3394-43C8-B9A1-A69021FE2986}
+		{AA19F381-4045-422B-8865-290E3BEF84E9} = {74BCAD1F-7B9D-4367-8928-EEAC0D57ACB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {12E91A33-78CD-4E7A-8391-1A602927F5A4}
