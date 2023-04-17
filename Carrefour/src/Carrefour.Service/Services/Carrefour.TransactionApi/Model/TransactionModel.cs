@@ -9,9 +9,6 @@ public class TransactionModel : EntityModel
     public string? Description { get; set; }
     public decimal Amount { get; set; }
     public int AccountId { get; set; }
-    public string UserId { get; set; } // foreign key to ApplicationUser
-
-    public virtual UserToken User { get; set; }
 }
 
 
