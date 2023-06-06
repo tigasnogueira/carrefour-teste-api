@@ -20,7 +20,7 @@ public class IdentityController : MainController
 
     [HttpGet]
     [Route("nova-conta")]
-    public IActionResult Registro()
+    public IActionResult Register()
     {
         return View();
     }
